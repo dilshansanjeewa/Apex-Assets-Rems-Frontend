@@ -1,0 +1,93 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&family=Inter:wght@600&display=swap');
+
+/* Carousel Container */
+#propertyCarousel {
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-img {
+    height: 500px;
+    object-fit: cover; /* Ensures image fills 500px without distortion */
+}
+
+/* Dark Overlay to make text readable */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Adjust darkness as needed */
+    z-index: 1;
+}
+
+/* Caption Positioning */
+.carousel-caption {
+    z-index: 2;
+    bottom: 20%; /* Centers content vertically */
+}
+
+/* --- Typography --- */
+
+.hero-header {
+    font-family: 'Roboto', sans-serif;
+    font-size: 68px;
+    font-weight: 900; /* Extra Bold */
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 600; /* Semi Bold */
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Dedicated Button --- */
+
+.btn-hero {
+    background-color: #00A896 !important;
+    color: white !important;
+    padding: 15px 45px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50px; /* Rounded pill shape */
+    border: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-hero:hover {
+    background-color: #008f7f !important;
+    transform: scale(1.05);
+}
+
+/* --- Navigation & Indicators --- */
+
+/* Dot Indicators styling */
+.carousel-indicators [button] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-indicators .active {
+    background-color: #ffffff;
+    width: 14px;
+    height: 14px;
+}
+
+/* Customizing Arrows */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+}
