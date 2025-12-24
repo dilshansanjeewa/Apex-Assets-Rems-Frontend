@@ -1,0 +1,312 @@
+:root {
+    --apex-blue: #0A2342;
+    --apex-dark: #1a202c;
+    --apex-gray: #718096;
+    --apex-light-gray: #e2e8f0;
+    --transition: all 0.3s ease;
+}
+
+/* Main Container - Frameless Full Screen */
+.auth-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
+
+/* Left Side: Image Section */
+.auth-image {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    padding: 80px;
+    position: relative;
+}
+
+/* Overlay for text readability on image */
+.overlay-text {
+    color: white;
+    z-index: 2;
+    max-width: 500px;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.overlay-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.overlay-text p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Right Side: Form Section */
+.auth-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* Logo Styling */
+.logo-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 300px;
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Typography */
+.typography {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--apex-blue);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--apex-gray);
+    margin-bottom: 35px;
+    font-size: 1rem;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--apex-dark);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid var(--apex-light-gray);
+    font-size: 1rem;
+    transition: var(--transition);
+    outline: none;
+}
+
+.password-field-container {
+    position: relative; /* Allows the icon to 'float' inside */
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+/* Style the eye button */
+.eye-toggle {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: var(--apex-gray);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    transition: var(--transition);
+    z-index: 5;
+}
+
+.eye-toggle:hover {
+    color: var(--apex-blue);
+}
+
+/* Adjust button focus so it doesn't look messy */
+.eye-toggle:focus {
+    outline: none;
+    color: var(--apex-blue);
+}
+
+.input-group input:focus {
+    border-color: var(--apex-blue);
+    box-shadow: 0 0 0 4px rgba(43, 108, 176, 0.1);
+}
+
+/* Options (Remember Me / Forgot Pwd) */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.form-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--apex-gray);
+}
+
+.forgot-link {
+    color: var(--apex-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* Action Button */
+.btn-primary {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--apex-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: #2d3748;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer Link */
+.foot-text {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--apex-gray);
+    font-size: 0.95rem;
+}
+
+.foot-text a {
+    color: var(--apex-blue);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.foot-text a:hover {
+    text-decoration: underline;
+}
+
+/* Separator Line "or" */
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0;
+    color: var(--apex-gray);
+    font-size: 0.85rem;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--apex-light-gray);
+}
+
+.separator:not(:empty)::before {
+    margin-right: .5em;
+}
+
+.separator:not(:empty)::after {
+    margin-left: .5em;
+}
+
+/* Social Buttons Container */
+.social-auth {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Social Button */
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    background: white;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.social-btn img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.social-btn:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Responsiveness: Mobile/Tablet */
+@media (max-width: 1024px) {
+    .overlay-text h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-image {
+        display: none; /* Only show form on mobile */
+    }
+    
+    .auth-content {
+        padding: 20px;
+    }
+}
+
+/* Desktop Adjustment: Show buttons side-by-side */
+@media (min-width: 400px) {
+    .social-auth {
+        flex-direction: row;
+    }
+    
+    .social-btn {
+        font-size: 0.85rem;
+        padding: 10px 5px;
+    }
+}
