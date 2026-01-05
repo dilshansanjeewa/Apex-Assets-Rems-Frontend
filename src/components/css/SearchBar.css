@@ -1,0 +1,136 @@
+/* .sticky-search-wrapper {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 40px;
+  z-index: 100;
+  transition: all 0.3s ease;
+  background: none;
+}
+
+.sticky-search-wrapper.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+} */
+
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding: 3px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.animating-border {
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  background-size: 200% 200%;
+  animation: moveGradient 4s linear infinite;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.search-container.active {
+  background: #af40ff;
+  animation: none;
+  box-shadow: 0 0 20px rgba(175, 64, 255, 0.4);
+}
+
+.search-inner {
+  background: white;
+  border-radius: 48px;
+  display: flex;
+  align-items: center;
+  padding: 10px 25px;
+  width: 100%;
+}
+
+.static-text {
+  font-weight: 700;
+  color: #1a202c;
+  white-space: nowrap;
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.input-box {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.main-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 10px 5px;
+  background: transparent;
+}
+
+.typing-cursor {
+  font-weight: 100;
+  color: #5b42f3;
+  animation: blink 0.8s infinite;
+  margin-left: -5px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.search-btn {
+  background: transparent;
+  border: none;
+  color: #5b42f3;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 10px;
+  transition: transform 0.2s ease;
+}
+
+.search-btn:hover {
+  transform: scale(1.2);
+}
+
+@media (min-width: 992px) {
+  .search-inner {
+    padding: 15px 35px;
+  }
+
+  .static-text,
+  .main-input {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .static-text {
+    font-size: 0.9rem;
+  }
+
+  .main-input {
+    font-size: 0.9rem;
+  }
+}
