@@ -1,59 +1,57 @@
-import img1 from '../assets/carousel/Carousel_image_1.png';
-import img2 from '../assets/carousel/Carousel_image_2.png';
-import img3 from '../assets/carousel/Carousel_image_3.png';
-import "./css/carousel.css"
+import "./css/Carousel.css"
 
 function Carousel() {
     return (
         <>
-            <div id="propertyCarousel" className="carousel slide" data-bs-ride="carousel">
-
+            <div id="carouselExampleCaptions" className="carousel slide carousel-fade" data-bs-ride="true">
                 <div className="carousel-indicators">
-                    <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="0" className="active" aria-current="true"></button>
-                    <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
-
                 <div className="carousel-inner">
-
                     <div className="carousel-item active">
-                        <div className="overlay"></div>
-                        <img src={img1} className="d-block w-100 carousel-img" alt="Property 1" />
-                        <div className="carousel-caption d-none d-md-block">
-                            <h1 className="hero-header">Find Your Dream Home</h1>
-                            {/* <p className="hero-description">Reach thousands of buyers quickly with our verified platform</p> */}
-                            <p className="hero-description">Browse thousands of listings with intractive maps and 360 virtual tours</p>
-                            <button className="btn btn-hero">List Now</button>
+                        <img src="https://images.pexels.com/photos/2181192/pexels-photo-2181192.jpeg" className="d-block w-100" alt="..." />
+                        <div className="carousel-caption d-md-block">
+                            <h1>First slide label</h1>
+                            <h5>Some representative placeholder content for the first slide.</h5>
+                            <div className="btn-container">
+                                <button className='btn-carousel'>
+                                    <span className="text">Button 1</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
-
                     <div className="carousel-item">
-                        <div className="overlay"></div>
-                        <img src={img2} className="d-block w-100 carousel-img" alt="Property 2" />
-                        <div className="carousel-caption d-none d-md-block">
-                            <h1 className="hero-header">List Your Property Today</h1>
-                            <p className="hero-description">Reach thousands of buyers quickly with our verified platform</p>
-                            <button className="btn btn-hero">Explore Now</button>
+                        <img src="https://images.pexels.com/photos/137032/pexels-photo-137032.jpeg" className="d-block w-100" alt="..." />
+                        <div className="carousel-caption d-md-block">
+                            <h1>Second slide label</h1>
+                            <h5>Some representative placeholder content for the second slide.</h5>
+                            <div className="btn-container">
+                                <button className='btn-carousel'>
+                                    <span className="text">Button 2</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
-
                     <div className="carousel-item">
-                        <div className="overlay"></div>
-                        <img src={img3} className="d-block w-100 carousel-img" alt="Property 3" />
-                        <div className="carousel-caption d-none d-md-block">
-                            <h1 className="hero-header">Meet Verified Sellers and Agents</h1>
-                            <p className="hero-description"></p>
-                            <button className="btn btn-hero">Start Investing</button>
+                        <img src="https://images.pexels.com/photos/1375016/pexels-photo-1375016.jpeg" className="d-block w-100" alt="..." />
+                        <div className="carousel-caption d-md-block">
+                            <h1>Third slide label</h1>
+                            <h5>Some representative placeholder content for the third slide.</h5>
+                            <div className="btn-container">
+                                <button className='btn-carousel'>
+                                    <span className="text">Button 3</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
-
                 </div>
-
-                <button className="carousel-control-prev" type="button" data-bs-target="#propertyCarousel" data-bs-slide="prev">
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Previous</span>
                 </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#propertyCarousel" data-bs-slide="next">
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>
