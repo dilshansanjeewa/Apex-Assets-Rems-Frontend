@@ -1,106 +1,169 @@
-/* --- Background and Heights --- */
-.custom-navbar {
-  background-color: #0d1b32; /* Deep Navy */
-  height: 80px;
-  padding: 0;
+/* Logo Styling */
+.nav-logo {
+    height: 40px;
+    width: auto;
 }
 
-.logo-img {
-  height: 60px; /* Requested Logo height */
-  background: white;
+/* Menu Hover Underline Effect */
+.menu-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.menu-link::after {
+    display: none !important;
+}
+
+/* Dropdown Item Glow and Underline */
+.custom-dropdown .dropdown-item {
+    position: relative;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.custom-dropdown .dropdown-item:hover {
+    background-color: transparent;
+    color: #af40ff;
+    text-shadow: 0 0 8px rgba(0, 168, 150, 0.4); /* Glow effect */
+}
+
+.custom-dropdown .dropdown-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 5px;
+    left: 20px;
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    transition: width 0.3s ease;
+}
+
+.custom-dropdown .dropdown-item:hover::after {
+    width: calc(100% - 40px);
+}
+
+/* Post New Ad Button */
+.btn-post-ad {
+  align-items: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
   border-radius: 8px;
-  padding: 5px 15px;
-}
-
-/* Apply this to both navbars */
-.container-custom {
-  width: 100%;
-  max-width: 1400px; /* Or whatever width you prefer */
-  margin: 0 auto;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px; /* This padding controls the 'Left Alignment' */
+  font-size: 18px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-/* Ensure the Logo Wrapper doesn't have extra margins */
-.navbar-logo-wrapper {
-  margin-left: 0; 
-  height: 60px;
-  display: flex;
-  align-items: center;
+.btn-post-ad:hover,
+.btn-post-ad:active {
+      outline: 0;
 }
 
-/* Ensure the Search Group starts exactly at the edge */
-.search-group {
-  margin-left: 0;
-  width: 450px;
-}
-
-/* --- Underline Animation (Left to Right) --- */
-.custom-underline {
-  color: white !important;
-  position: relative;
-  margin: 0 15px;
-}
-
-.custom-underline::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #007bff; /* Underline color */
-  transition: width 0.3s ease-in-out;
-}
-
-.custom-underline:hover::after {
-  width: 100%;
-}
-
-/* --- Profile & Logout Container --- */
-.user-action-container {
-  height: 60px; /* Requested Container height */
-  background: white;
-  border-radius: 50px;
-  padding: 5px;
-  display: flex;
-  gap: 10px;
-}
-
-.user-avatar {
-  width: 50px; /* Requested image circle width */
-  height: 50px; /* Requested image circle height */
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid #0d1b32;
-}
-
-.user-avatar img {
+.btn-post-ad span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  transition: 300ms;
 }
 
-/* --- AWS Style Glowing Logout Button --- */
-.btn-logout-aws {
-  height: 50px; /* Requested button height */
-  background-color: #0d1b32;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 0 25px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+.btn-post-ad:hover span{
+    background: none;
 }
 
-.btn-logout-aws:hover {
-  background-color: #1a2f4d;
-  /* AWS Glowing Effect */
-  box-shadow: 
-    0 0 12px rgba(255, 255, 255, 0.2), 
-    inset 0 1px 1px rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
+.btn-post-ad:active{
+    transform: scale(0.9);
+}
+
+/* Profile Section Styling */
+.profile-img-wrapper {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    border: 2px solid #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-name-text {
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.btn-sign-in {
+    align-items: center;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 8px 15px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: inline-flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 14px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 100px;
+    padding: 10px 16px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-sign-in:active,
+.btn-sign-in:hover {
+    outline: 0;
+    transform: translateY(-1px);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 991px) {
+    .navbar-nav {
+        padding: 20px 0;
+    }
+    .custom-dropdown {
+        border: none;
+        box-shadow: none;
+        padding-left: 0;
+    }
+    .profile-trigger {
+        padding-left: 0;
+        margin-top: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+  .btn-sign-in {
+    font-size: 16px;
+        min-width: 120px;
+  }
 }
