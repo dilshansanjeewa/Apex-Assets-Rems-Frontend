@@ -6,8 +6,9 @@ import { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 
 const AuthPage = ({ type }) => {
-    const isLogin = type === 'signin';
+    const isSignIn = type === 'signin';
     const [showPassword, setShowPassword] = useState(false)
+    const [userRole, setUserRole] = useState('Buyer');
 
     return (
         <div className="auth-container">
@@ -26,16 +27,39 @@ const AuthPage = ({ type }) => {
                         <img src={logo} alt="Apex Assets Logo" className="logo" />
                     </div>
 
-                    <h2 className='typography' >{isLogin ? 'Welcome Back' : 'Create Account'}</h2>
+                    <h2 className='typography' >{isSignIn ? 'Welcome Back' : 'Create Account'}</h2>
                     <p className="subtitle">
-                        {isLogin ? 'Please enter your details to sign in.' : 'Join Apex Assets and start browsing your dream.'}
+                        {isSignIn ? 'Please enter your details to sign in.' : 'Join Apex Assets and start browsing your dream.'}
                     </p>
 
                     <form onSubmit={(e) => e.preventDefault()}>
-                        {!isLogin && (
+                        {!isSignIn && (
                             <div className="input-group">
                                 <label>Full Name</label>
                                 <input type="text" placeholder="John Doe" required />
+                                {/* ================================================= */}
+                                <div className="role-selection-group">
+                                    <label className="input-label">I am a / an:</label>
+                                    <div className="role-options">
+                                        {[ 'Buyer', 'Owner', 'Agent', 'Business'].map((role) => (
+                                            <label
+                                                key={role}
+                                                className={`role-tile ${userRole === role ? 'active' : ''}`}
+                                            >
+                                                <input
+                                                    type="radio"
+                                                    name="userRole"
+                                                    value={role}
+                                                    checked={userRole === role}
+                                                    onChange={(e) => setUserRole(e.target.value)}
+                                                />
+                                                <span className="role-text">{role}</span>
+                                                {userRole === role && <i className="bi bi-check-circle-fill"></i>}
+                                            </label>
+                                        ))}
+                                    </div>
+                                </div>
+
                             </div>
                         )}
 
@@ -55,7 +79,7 @@ const AuthPage = ({ type }) => {
                         </div>
 
                         <div className="form-options">
-                            {isLogin && (
+                            {isSignIn && (
                                 <>
                                     <label><input type="checkbox" /> Remember me</label>
                                     <a href="#forgot" className="forgot-link">Forgot password?</a>
@@ -64,14 +88,14 @@ const AuthPage = ({ type }) => {
                         </div>
 
                         <button type="submit" className="btn-primary">
-                            {isLogin ? 'Sign In' : 'Sign Up'}
+                            {isSignIn ? 'Sign In' : 'Sign Up'}
                         </button>
                     </form>
 
                     <p className="foot-text">
-                        {isLogin ? "Don't have an account?" : "Already have an account?"}{' '}
-                        <a href={isLogin ? "/signup" : "/login"}>
-                            {isLogin ? 'Sign Up' : 'Log In'}
+                        {isSignIn ? "Don't have an account?" : "Already have an account?"}{' '}
+                        <a href={isSignIn ? "/signup" : "/signin"}>
+                            {isSignIn ? 'Sign Up' : 'Sign In'}
                         </a>
                     </p>
                     <div className="separator">
